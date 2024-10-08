@@ -1,0 +1,34 @@
+{% load static %}
+{% load i18n %}
+{% load compress %}
+{% load django_browser_reload %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta author="Lusayo Nyondo">
+        <meta description="My portfolio project.">
+        {% block title %}
+            <title>
+                {% block head_title %}
+                    {% trans 'Sayo Portfolio' %}
+                {% endblock %}
+            </title>
+        {% endblock %}
+
+        {% compress css %}
+            <link rel="stylesheet" type="text/css" href="{% static 'src/output.css' %}">
+        {% endcompress %}
+
+        <link rel="icon" type="image/svg" href="{% static 'assets/logo.svg' %}">
+    </head>
+    <body class="w-screen h-screen overflow-hidden">
+        {% block body %}
+        {% endblock %}
+
+        {% django_browser_reload_script %}
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    </body>
+</html>

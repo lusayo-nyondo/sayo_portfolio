@@ -1,0 +1,10 @@
+{% extends '_base.html' %}
+
+{% block body %}
+{% include './navbar.html' %}
+
+<main class="w-full h-full overflow-hidden">
+    {% block content %}
+    {% endblock %}
+</main>
+{% endblock %}
