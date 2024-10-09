@@ -1,7 +1,12 @@
-from django import template
+from django.template import (
+    Library as TemplateLibrary,
+    Node as TemplateNode,
+    TemplateSyntaxError
+)
+
 from django.urls import reverse
 
-register = template.Library()
+register = TemplateLibrary()
 
 @register.simple_tag
 def get_link_class(request, url, active_class, inactive_class):
@@ -14,7 +19,7 @@ def get_link_class(request, url, active_class, inactive_class):
         return inactive_class
 
 @register.simple_tag
-class SetVarNode(template.Node):
+class SetVarNode(TemplateNode):
     def __init__(self, new_val, var_name):
         self.new_val = new_val
         self.var_name = var_name
@@ -30,15 +35,15 @@ def setvar(parser,token):
         # Splitting by None == splitting by spaces.
         tag_name, arg = token.contents.split(None, 1)
     except ValueError:
-        raise template.TemplateSyntaxError("%r tag requires arguments" % token.contents.split()[0])
+        raise TemplateSyntaxError("%r tag requires arguments" % token.contents.split()[0])
     
     m = re.search(r'(.*?) as (\w+)', arg)
     
     if not m:
-        raise template.TemplateSyntaxError("%r tag had invalid arguments" % tag_name)
+        raise TemplateSyntaxError("%r tag had invalid arguments" % tag_name)
     new_val, var_name = m.groups()
     
     if not (new_val[0] == new_val[-1] and new_val[0] in ('"', "'")):
-        raise template.TemplateSyntaxError("%r tag's argument should be in quotes" % tag_name)
+        raise TemplateSyntaxError("%r tag's argument should be in quotes" % tag_name)
     
     return SetVarNode(new_val[1:-1], var_name)

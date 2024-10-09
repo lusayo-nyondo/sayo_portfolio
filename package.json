@@ -1,6 +1,16 @@
 {
   "dependencies": {
-    "flowbite": "^2.5.2",
+    "flowbite": "^2.5.2"
+  },
+  "devDependencies": {
     "tailwindcss": "^3.4.13"
-  }
+  },
+  "name": "sayo_portfolio",
+  "version": "1.0.0",
+  "description": "My portfolio project.",
+  "scripts": {
+    "dev": "tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch"
+  },
+  "author": "Lusayo Nyondo",
+  "license": "ISC"
 }

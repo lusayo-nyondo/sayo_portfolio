@@ -33,7 +33,10 @@ module.exports = {
   content: [
     './templates/**/*.html',
     './*/templates/**/*.html',
-    './node_modules/flowbite/**/*',
+    '!./node_modules',
+    './node_modules/flowbite/**/*.js',
+    '!./venv',
+    './**/*.py',
   ],
   darkMode: 'class',
   theme: {

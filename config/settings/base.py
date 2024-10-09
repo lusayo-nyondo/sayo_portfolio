@@ -33,9 +33,6 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'allauth',
-    'allauth.account',
-    
     'unfold',
     
     'django.contrib.admin',
@@ -62,8 +59,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
     'django_browser_reload.middleware.BrowserReloadMiddleware',
-    
-    'allauth.account.middleware.AccountMiddleware',
     
     'django_htmx.middleware.HtmxMiddleware',
 ]
@@ -155,5 +150,4 @@ STATIC_ROOT = 'public'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
 ]

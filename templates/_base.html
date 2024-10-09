@@ -1,8 +1,7 @@
-{% load static %}
 {% load i18n %}
 {% load compress %}
+{% load static %}
 {% load django_browser_reload %}
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,11 +10,7 @@
         <meta author="Lusayo Nyondo">
         <meta description="My portfolio project.">
         {% block title %}
-            <title>
-                {% block head_title %}
-                    {% trans 'Sayo Portfolio' %}
-                {% endblock %}
-            </title>
+            <title>Sayo Portfolio</title>
         {% endblock %}
 
         {% compress css %}
