@@ -25,12 +25,19 @@ SECRET_KEY = 'django-insecure-g4e2*w8wn3&97ov+&q+(c&#sm=zp%w_)h-g8_w^(bjui_gmyc8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*'
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'allauth',
+    'allauth.account',
+    
+    'unfold',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +47,8 @@ INSTALLED_APPS = [
     
     'django_browser_reload',
     'compressor',
+    'django_cotton',
+    
     'public'
 ]
 
@@ -53,6 +62,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
     'django_browser_reload.middleware.BrowserReloadMiddleware',
+    
+    'allauth.account.middleware.AccountMiddleware',
+    
+    'django_htmx.middleware.HtmxMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -140,3 +153,7 @@ STATICFILES_FINDERS = (
 
 STATIC_ROOT = 'public'
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
