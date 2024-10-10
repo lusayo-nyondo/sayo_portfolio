@@ -1,2 +1,7 @@
 from .base import *
-# Override base settings for production build.
+
+DEBUG = False
+
+ALLOWED_HOSTS = [
+    'lusayonyondo.pythonanywhere.com'
+]
