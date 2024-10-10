@@ -1,6 +1,12 @@
 {
     "configurations": [
         {
+            "command": "npm run dev",
+            "name": "Javascript Build Debugger: NPM",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
             "name": "Python Debugger: Django",
             "type": "debugpy",
             "request": "launch",
@@ -10,7 +16,15 @@
             "django": true,
             "autoStartBrowser": false,
             "program": "${workspaceFolder}\\manage.py",
-            "preLaunchTask": "npm: dev",
+        },
+    ],
+    "compounds": [
+        {
+            "name": "_Django + NPM Debugger",
+            "configurations": [
+                "Python Debugger: Django", "Javascript Build Debugger: NPM"
+            ],
+            "stopAll": true
         }
     ]
 }
