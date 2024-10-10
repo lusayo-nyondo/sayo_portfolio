@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     
     'django_browser_reload',
     'compressor',
-    'django_vite',
+    #'django_vite',
     'django_cotton',
     
     'public'
@@ -146,6 +146,10 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+
+STATICFILES_DIRS = [
+    'static'
+]
 
 STATIC_ROOT = 'public_static'
 
