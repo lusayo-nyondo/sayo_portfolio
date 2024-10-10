@@ -1,4 +1,13 @@
 {
+    "compounds": [
+        {
+            "name": "Debug",
+            "configurations": [
+                "Python Debugger: Django", "Javascript Build Debugger: NPM"
+            ],
+            "stopAll": true
+        }
+    ],
     "configurations": [
         {
             "command": "npm run dev",
@@ -18,13 +27,4 @@
             "program": "${workspaceFolder}\\manage.py",
         },
     ],
-    "compounds": [
-        {
-            "name": "_Django + NPM Debugger",
-            "configurations": [
-                "Python Debugger: Django", "Javascript Build Debugger: NPM"
-            ],
-            "stopAll": true
-        }
-    ]
 }
