@@ -1,8 +1,9 @@
+{% load public_extras %}
 <li>
     <a
-        href="{{ url }}"
-        class="{{ class }}"
-        aria-current="{{ slot}}">
-        <span>{{ slot }}</span>
+        href="{% url link_url %}"
+        class="{% get_navbar_link_class request link_url link_active_class link_inactive_class %}"
+        aria-current="page">
+        <span>{{ link_text }} </span>
     </a>
 </li>

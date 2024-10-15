@@ -32,7 +32,6 @@ INSTALLED_APPS = [
     'django_browser_reload',
     'compressor',
     #'django_vite',
-    'django_cotton',
     
     'public'
 ]

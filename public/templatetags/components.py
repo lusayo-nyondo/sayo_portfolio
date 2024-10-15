@@ -7,7 +7,7 @@ from django.urls import (
 register = template.Library()
 
 @register.inclusion_tag('public/navbar/menu_item.html', takes_context=True)
-def show_menu_item(context):
+def show_navbar_menu_item(context):
     request = context['request']
     reverse_url = context['reverse_url']
     

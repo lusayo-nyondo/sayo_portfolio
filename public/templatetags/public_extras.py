@@ -9,7 +9,7 @@ from django.urls import reverse
 register = TemplateLibrary()
 
 @register.simple_tag
-def get_link_class(request, url, active_class, inactive_class):
+def get_navbar_link_class(request, url, active_class, inactive_class):
     reversed_url = reverse(url)
     current_url = request.path
     
