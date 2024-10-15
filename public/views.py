@@ -1,7 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import (
+    render,
+    redirect
+)
+
+from django.urls import (
+    reverse
+)
+
+from .forms import (
+    ContactMessageForm
+)
 
 def index(request):
-    context = {}
+    tech_stack = tuple()
+    
+    context = {
+        tech_stack: tech_stack
+    }
     
     return render(
         request,
@@ -10,8 +25,20 @@ def index(request):
     )
     
 def contact(request):
-    context = {}
-
+    if request.method == 'POST':
+        form = ContactMessageForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(
+                reverse('public:contact')
+            )
+    else:
+        form = ContactMessageForm()
+    
+    context = {
+        'form': form
+    }
+    
     return render(
         request,
         'public/pages/contact.html',
