@@ -1,12 +1,11 @@
 from django.urls import path
 
 from .views import (
-    index,
-    contact
+    index
 )
 
-app_name = 'public'
+app_name = 'services'
+
 urlpatterns = [
     path('', index, name="index"),
-    path('contact/', contact, name="contact"),
 ]

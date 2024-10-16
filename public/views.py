@@ -7,9 +7,14 @@ from django.urls import (
     reverse
 )
 
+from django.views.generic import (
+    ListView
+)
+
 from .forms import (
     ContactMessageForm
 )
+
 
 def index(request):
     tech_stack = tuple()
@@ -42,34 +47,5 @@ def contact(request):
     return render(
         request,
         'public/pages/contact.html',
-        context
-    )
-
-
-def projects(request):
-    context = {}
-    
-    return render(
-        request,
-        'public/pages/projects.html',
-        context
-    )
-    
-def designs(request):
-    context = {}
-    
-    return render(
-        request,
-        'public/pages/designs.html',
-        context
-    )
-    
-
-def content(request):
-    context = {}
-    
-    return render(
-        request,
-        'public/pages/designs.html',
         context
     )

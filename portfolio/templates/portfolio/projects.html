@@ -1,0 +1,19 @@
+{% extends 'public/_base.html' %}
+
+{% block content %}
+<section class="bg-white dark:bg-gray-900 flex flex-col h-full overflow-y-hidden">
+    <div class="py-4 mb-2 w-full">
+        <p class="text-gray-500 sm:text-lg dark:text-gray-400 text-center">
+            My projects and the technologies used.
+        </p>
+    </div>
+    <div class="w-full grid grid-cols-12 flex-1 overflow-y-hidden">
+        <div class="col-span-3 h-full overflow-y-auto">
+            {% include './projects/sidebar.html' %}
+        </div>
+        <div class="col-span-9 overflow-y-auto">
+            {% include './projects/main.html' %}
+        </div>
+    </div>
+</section>
+{% endblock %}

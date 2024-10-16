@@ -33,7 +33,9 @@ INSTALLED_APPS = [
     'compressor',
     #'django_vite',
     
-    'public'
+    'public',
+    'portfolio',
+    'services',
 ]
 
 MIDDLEWARE = [

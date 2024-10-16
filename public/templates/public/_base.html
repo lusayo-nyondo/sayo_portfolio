@@ -1,10 +1,12 @@
 {% extends '_base.html' %}
 
 {% block body %}
-
-{% include './navbar.html' %}
-<main class="w-full h-full overflow-hidden">
-    {% block content %}
-    {% endblock %}
-</main>
+    <div class="w-full h-full flex flex-col">
+        {% include './navbar.html' %}
+        <main class="overflow-hidden flex-1">
+            {% block content %}
+            {% endblock %}
+        </main>
+        {% include './footer.html' %}
+    </div>
 {% endblock %}
