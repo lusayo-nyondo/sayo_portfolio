@@ -18,10 +18,12 @@ class Technology(models.Model):
         ('data_engineering', 'Data Engineering'),
         ('dev_ops', 'Dev Ops')
     )
-    
     title = models.CharField(max_length=250)
     description = models.TextField()
     category = models.CharField(
         max_length=250,
         choices=CATEGORIES
     )
+    
+    class Meta:
+        verbose_name_plural = 'technologies'

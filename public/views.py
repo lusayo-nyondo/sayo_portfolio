@@ -34,8 +34,9 @@ def contact(request):
         form = ContactMessageForm(request.POST)
         if form.is_valid():
             form.save()
+            request.session["message_sent"] = True
             return redirect(
-                reverse('public:contact')
+                reverse('public:contact_result')
             )
     else:
         form = ContactMessageForm()
@@ -49,3 +50,19 @@ def contact(request):
         'public/pages/contact.html',
         context
     )
+
+def contact_result(request):
+    if "message_sent" in request.session and request.session["message_sent"]:
+        del request.session["message_sent"]
+    
+        context = {}
+        
+        return render(
+            request,
+            'public/pages/contact/screens/result.html',
+            context
+        )
+    else:
+        return redirect(
+            reverse('public:contact')
+        )

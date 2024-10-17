@@ -1,0 +1,5 @@
+<input
+    class="rounded block w-full border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+    type="{{ widget.type }}"
+    name="{{ widget.name }}"{% if widget.value != None %} value="{{ widget.value|stringformat:'s' }}"{% endif %}
+    {% include "django/forms/widgets/attrs.html" %}>

@@ -5,6 +5,6 @@ def index(request):
     
     return render(
         request,
-        'services/index.html',
+        'services/pages/index.html',
         context
     )

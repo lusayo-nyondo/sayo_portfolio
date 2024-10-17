@@ -1,0 +1,12 @@
+{% extends 'portfolio/_base.html' %}
+
+{% block content %}
+<div class="h-full w-full flex items-start justify-center p-4">
+    <div class="grid grid-cols-12 gap-4 ">
+        {% include './services/service_item.html' with title="Web Scraping" description="I can create web scraping tasks for you using Scrapy and Celery to automate your ingestion pipeline." %}
+        {% include './services/service_item.html' with title="ETL Pipeline Automation" description="I can create an ETL pipeline that handles data ingestion, transformation, and storage in your chosen data stores." %}
+        {% include './services/service_item.html' with title="Payments API Integration" description="I can create an ETL pipeline that handles data ingestion, transformation, and storage in your chosen data stores." %}
+        {% include './services/service_item.html' with title="ERP Development and Deployment" description="I work with partners to provide customized ERP solutions for your business (CRMs, HRMSs, Asset Management, etc). SLAs and helpdesk services included." %}
+    </div>
+</div>
+{% endblock %}

@@ -1,13 +1,14 @@
 from django.shortcuts import render, HttpResponse
 
 def index(request):
-    context = {}
+    """context = {}
 
     return render(
         request,
-        'portfolio/index.html',
+        'portfolio/pages/index.html',
         context
-    )
+    )"""
+    return projects(request)
 
 def projects(request):
     context = {
@@ -16,7 +17,7 @@ def projects(request):
     
     return render(
         request,
-        'public/pages/projects.html',
+        'portfolio/pages/projects.html',
         context
     )
     
@@ -25,7 +26,7 @@ def designs(request):
     
     return render(
         request,
-        'public/pages/designs.html',
+        'portfolio/pages/designs.html',
         context
     )
     
@@ -35,7 +36,7 @@ def content(request):
     
     return render(
         request,
-        'public/pages/designs.html',
+        'portfolio/pages/designs.html',
         context
     )
     
@@ -44,6 +45,6 @@ def services(request):
     
     return render(
         request,
-        'public/pages/services.html',
+        'portfolio/pages/services.html',
         context
     )
