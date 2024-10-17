@@ -19,6 +19,12 @@ from django.urls import (
     path,
     include
 )
+from django.conf.urls.static import static
+
+from .settings.base import (
+    MEDIA_ROOT,
+    MEDIA_URL,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +32,4 @@ urlpatterns = [
     path('', include('public.urls')),
     path('portfolio', include('portfolio.urls')),
     path('services', include('services.urls')),
-]
+] + static(MEDIA_URL, document_root=MEDIA_ROOT)

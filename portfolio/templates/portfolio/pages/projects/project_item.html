@@ -1,0 +1,26 @@
+<div
+    x-data="{
+        technologies: [ {% for technology in project.technologies.all %} '{{ technology.name }}', {% endfor %} ]
+    }"
+    x-show="filter_technologies.every(technology => technologies.includes(technology))"
+    class="transition duration-300 ease-in-out col-span-4 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:transform hover:scale-105 transition ease-in-out">
+    <a href="{{ project.image.url }}">
+        <img class="rounded-t-lg" src="{{ project.image.url }}" alt="{{ project.title }}" />
+    </a>
+    <div class="p-5">
+        <a href="{{ project.image.url }}">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ project.title }}</h5>
+        </a>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ project.description }}</p>
+        <a href="{{ project.url }}" target="_blank" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+            {% if project.is_demo %}
+                <span>View Demo</span>
+            {% else %}
+                <span>Visit Site</span>
+            {% endif %}
+            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+        </a>
+    </div>
+</div>

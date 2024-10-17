@@ -1,9 +1,11 @@
-from django.contrib import admin
+from django.contrib.admin import (
+    site
+)
 
 from .models import (
     Project,
     Technology
 )
 
-admin.site.register(Project)
-admin.site.register(Technology)
+site.register(Project)
+site.register(Technology)

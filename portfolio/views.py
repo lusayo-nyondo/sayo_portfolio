@@ -1,18 +1,17 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
+
+from .models import (
+    Project
+)
 
 def index(request):
-    """context = {}
-
-    return render(
-        request,
-        'portfolio/pages/index.html',
-        context
-    )"""
     return projects(request)
 
 def projects(request):
+    projects = Project.objects.all()
+    
     context = {
-        'projects': tuple()
+        'projects': projects
     }
     
     return render(

@@ -145,3 +145,6 @@ STATIC_ROOT = 'public_static'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
+
+MEDIA_ROOT = 'public_media'
+MEDIA_URL = '/media/'

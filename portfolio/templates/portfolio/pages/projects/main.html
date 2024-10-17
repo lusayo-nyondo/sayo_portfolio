@@ -1,15 +1,17 @@
 {% load static %}
-<div class="h-full w-full flex items-center justify-center">
-    {% for project in projects %}
-    <div>
-        <h2 class="text-2xl bold">{{ project.title }}</h2>
-        <img src="{{ project.image.url}}">
-        <p>{{ project.description }}</p>
+<div class="h-full w-full flex flex-col items-center justify-center">
+    <div class="w-full">
+        {% include './active_filters.html' %}
     </div>
-    {% empty %}
-    <div class="h-full w-full items-end justify-center flex bg-center bg-no-repeat"
-        style="background-image: url('{% static "assets/illustrations/cat.png" %}')">
-        <p class="text-lg text-primary-700">Looks like there's no projects yet. 😿</p>
+    <div class="w-full flex-1 grid grid-cols-12 gap-2 overflow-y-auto items-center justify-center p-4">
+        {% for project in projects %}
+            {% include './project_item.html' with project=project %}
+        {% empty %}
+        <div class="h-full w-full items-end justify-center flex bg-center bg-no-repeat"
+            style="background-image: url('{% static "assets/illustrations/cat.png" %}')">
+            <p class="text-lg text-primary-700">Looks like there's no projects yet. 😿</p>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
+    
 </div>

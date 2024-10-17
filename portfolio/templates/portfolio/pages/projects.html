@@ -7,7 +7,10 @@
             My projects and the technologies used.
         </p>
     </div>
-    <div class="w-full grid grid-cols-12 flex-1 overflow-y-hidden">
+    <div
+        x-data="{
+            filter_technologies: [ ]
+        }" class="w-full grid grid-cols-12 flex-1 overflow-y-hidden">
         <div class="col-span-3 h-full overflow-y-auto">
             {% include './projects/sidebar.html' %}
         </div>
