@@ -3,9 +3,9 @@
         technologies: [ {% for technology in project.technologies.all %} '{{ technology.name }}', {% endfor %} ]
     }"
     x-show="filter_technologies.every(technology => technologies.includes(technology))"
-    class="flex flex-col h-[360px] transition duration-300 ease-in-out col-span-4 max-w-sm bg-white border border-gray-200 rounded shadow dark:bg-gray-800 dark:border-gray-700 hover:transform hover:scale-105 transition ease-in-out">
+    class="mx-auto flex flex-col h-[360px] w-[360px] md:w-full transition duration-300 ease-in-out col-span-12 md:col-span-6 lg:col-span-4 max-w-sm bg-white border border-gray-200 rounded shadow dark:bg-gray-800 dark:border-gray-700 hover:transform hover:scale-105 transition ease-in-out">
     <a href="{{ project.image.url }}" class="block h-[160px]">
-        <img class="rounded-t h-full" src="{{ project.image.url }}" alt="{{ project.title }}" />
+        <img class="rounded-t h-full w-full" src="{{ project.image.url }}" alt="{{ project.title }}" />
     </a>
     <div class="p-5 h-[160px] flex flex-col flex-1">
         <a href="{{ project.image.url }}">
