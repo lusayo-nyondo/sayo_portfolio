@@ -41,9 +41,7 @@ class Project(models.Model):
     preview_url = models.URLField()
     preview_type = models.ForeignKey(
         'PreviewType',
-        on_delete=models.DO_NOTHING,
-        null=True,
-        blank=True
+        on_delete=models.DO_NOTHING
     )
     
     technologies = models.ManyToManyField(
