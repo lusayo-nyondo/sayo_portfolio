@@ -1,12 +1,13 @@
 import os
 from django.db import models
 
-from portfolio.validators import (
+from public.validators import (
     validate_icon_file_extension
 )
 
 class Service(models.Model):
     name = models.CharField(max_length=100)
+    display_name = models.CharField(max_length=100)
     image = models.FileField(
         upload_to=os.path.join('services', 'thumbnails'),
         validators=[validate_icon_file_extension],

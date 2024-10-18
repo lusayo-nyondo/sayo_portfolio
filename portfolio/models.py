@@ -2,7 +2,7 @@ import os
 
 from django.db import models
 
-from .validators import (
+from public.validators import (
     validate_icon_file_extension
 )
 

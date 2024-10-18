@@ -1,9 +1,7 @@
 {% load static %}
 <div class="h-full overflow-y-hidden flex flex-col" x-data="{ search: '' }">
-    <div class="p-4">
-        {% include './sidebar_search.html' %}
-    </div>
-    <div class="gap-2 flex flex-col overflow-y-auto p-4" name="form_filter-tech-stack">
+    
+    <div class="gap-2 flex flex-col overflow-y-auto p-4 flex-1">
     {% for technology in technologies %}
         {% ifchanged %}<h4 class="text-primary-700 font-medium bold">{{ technology.get_category_display }}</h4>{% endifchanged %}
         {% include './sidebar_item.html' with icon="{{ technology.icon.url }}" title="{{ technology.display_name }}" name="{{ technology.name }}" %}

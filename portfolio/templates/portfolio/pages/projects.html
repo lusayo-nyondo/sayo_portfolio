@@ -1,17 +1,18 @@
 {% extends 'public/_base.html' %}
 
 {% block content %}
-<section class="bg-white dark:bg-gray-900 flex flex-col h-full overflow-y-hidden">
-    <div class="py-4 mb-2 w-full">
-        <p class="text-gray-500 sm:text-lg dark:text-gray-400 text-center">
-            My Projects
-        </p>
-    </div>
+<section
+    x-data="{
+        filters_open: false
+    }"
+    class="bg-white dark:bg-gray-900 flex flex-col h-full overflow-y-hidden">
     <div
         x-data="{
             filter_technologies: [ ]
-        }" class="w-full h-full grid grid-cols-12 flex-1 overflow-y-hidden">
-        <div class="col-span-12 md:col-span-3 hidden md:block h-full w-full overflow-y-auto bg-white absolute md:relative z-index-[999]">
+        }" class="w-full h-full grid grid-cols-12 flex-1 overflow-y-hidden relative">
+        <div
+            x-bind:class="{ 'hidden': !filters_open }"
+            class="col-span-12 md:col-span-3 hidden md:block h-full w-full overflow-y-auto bg-white absolute md:relative">
             {% include './projects/sidebar.html' %}
         </div>
         <div class="col-span-12 md:col-span-9 h-full w-full overflow-y-auto flex items-center justify-center">

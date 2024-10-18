@@ -5,13 +5,15 @@
             x-on:click="
                 if (filter_technologies.includes('{{ technology.name }}'))
                     filter_technologies.splice(filter_technologies.indexOf('{{ technology.name }}'), 1)
-                else filter_technologies.push('{{ technology.name }}')
+                else
+                    filter_technologies.push('{{ technology.name }}')
             "
+            x-bind:checked="filter_technologies.includes('{{ technology.name }}')"
             class="w-6 h-6 rounded-full bg-secondary-700 checked:text-white checked:bg-secondary-700 accent-secondary-700 text-secondary-600 border-secondary-300 dark:focus:ring-secondary-400 dark:ring-offset-secondary-800 focus:ring-1 dark:bg-secondary-700 dark:border-secondary-600">
         
         <div class="flex flex-row gap-4 justify-center items-center">
             <div class="flex justify-center items-center w-full w-10 h-10 lg:h-12 lg:w-12 dark:bg-secondary-900">
-                <img src="{{ technology.icon.url }}" alt="{{ technology.name }}">
+                <img class="object-fit w-full h-full" src="{{ technology.icon.url }}" alt="{{ technology.name }}">
             </div>
             <span class="font-medium text-sm dark:text-gray-700">{{ technology.display_name }}</span>
         </div>

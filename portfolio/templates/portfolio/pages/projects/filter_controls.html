@@ -1,0 +1,35 @@
+<div class="p-2">
+    <div>
+        {% include './sidebar_search.html' %}
+    </div>
+    <template
+        x-if="filter_technologies.length > 0">    
+        <div
+            class="flex flex-row justify-end">
+            <button
+                x-on:click="filter_technologies = []"
+                type="button"
+                class="text-secondary-500 hover:text-secondary-300 transition ease-in-out">
+                <span
+                    class="font-medium">Clear Filters</span>
+            </button>
+        </div>
+    </template>
+    <div class="block md:hidden">
+        {% include './active_filters.html' %}
+    </div>
+    <div
+        class="w-full flex flex-row justify-center py-2 md:hidden"
+        x-bind:class="{
+            'hidden': !filters_open,
+        }">
+        <button
+            x-bind:disabled="filter_technologies.length === 0"
+            type="button"
+            class="bg-secondary-500 disabled:bg-secondary-300 disabled:text-gray-500 ring-1 ring-secondary-100 rounded px-2 hover:bg-secondary-300 transition ease-in-out p-2"
+            x-on:click="filters_open = !filters_open">
+            <span
+                class="font-medium">Apply Filters</span>
+        </button>
+    </div>
+</div>

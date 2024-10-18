@@ -1,8 +1,13 @@
 {% load static %}
 <div class="h-full w-full flex flex-col items-center justify-center">
-    <div class="w-full">
-        {% include './active_filters.html' %}
-    </div>
+    {% include './main_header.html' %}
+    <template
+        x-if="filter_technologies.length > 0">
+        <div
+            class="w-full p-2 flex justify-center">
+            {% include './active_filters.html' %}
+        </div>
+    </template>
     <div class="w-full flex-1 grid grid-cols-12 gap-2 overflow-y-auto items-center justify-center p-4">
         {% for project in projects %}
             {% include './project_item.html' with project=project %}
