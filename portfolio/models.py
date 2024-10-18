@@ -6,25 +6,51 @@ from .validators import (
     validate_icon_file_extension
 )
 
+class PreviewType(models.Model):
+    icon = models.FileField(
+        upload_to=os.path.join(
+            'portfolio',
+            'preview_types'
+        ),
+        validators=[validate_icon_file_extension]
+    )
+    name = models.CharField(
+        max_length=100
+    )
+    display_name = models.CharField(
+        max_length=100
+    )
+    
+    created_on = models.DateTimeField(
+        auto_now_add=True
+    )
+    
+    updated_on = models.DateTimeField(
+        auto_now=True
+    )
+    
+    def __str__(self):
+        return self.display_name
+
 class Project(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(
         upload_to=os.path.join('portfolio', 'projects')
     )
-    url = models.URLField()
-    is_demo = models.BooleanField(default=False)
+    preview_url = models.URLField()
+    preview_type = models.ForeignKey(
+        'PreviewType',
+        on_delete=models.DO_NOTHING,
+        null=True,
+        blank=True
+    )
+    
     technologies = models.ManyToManyField(
         'Technology',
         blank=True
     )
     
-    @property
-    def technologies_list(self):
-        content = ', '.join([ f'"{ t.display_name }"' for t in self.technologies.all()])
-        print(content)
-        return content
-
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     
