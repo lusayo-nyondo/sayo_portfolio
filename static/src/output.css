@@ -1624,6 +1624,10 @@ video {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+.\[p\:w\FFFDX\FFFD\FFFD\4B7u\FFFD\FFFD\FFFD\FFFDx9z\FFFD\FFFD\] {
+  p: w�X��ҷu����x9z��;
+}
+
 .checked\:bg-secondary-700:checked {
   --tw-bg-opacity: 1;
   background-color: rgb(180 83 9 / var(--tw-bg-opacity));
