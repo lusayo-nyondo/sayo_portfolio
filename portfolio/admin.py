@@ -4,8 +4,10 @@ from django.contrib.admin import (
 
 from .models import (
     Project,
-    Technology
+    Technology,
+    PreviewType
 )
 
+site.register(PreviewType)
 site.register(Project)
 site.register(Technology)
