@@ -33,8 +33,8 @@ class Project(models.Model):
 
 class Technology(models.Model):
     CATEGORIES = [
-        ('frontend', 'Frontend Frameworks'),
-        ('backend', 'Backend Frameworks'),
+        ('frontend', 'Frontend Tools'),
+        ('backend', 'Backend Tools'),
         ('fullstack', 'Fullstack Frameworks'),
         ('mobile', 'Mobile Frameworks'),
         ('crossplatform', 'Crossplatform Frameworks'),
@@ -42,7 +42,8 @@ class Technology(models.Model):
         ('data_engineering', 'Data Engineering Tools'),
         ('devops', 'Dev Ops Tools'),
         ('language', 'Languages'),
-        ('other', 'Other'),
+        ('content_management_systems', 'Content Management Systems'),
+        ('other', 'Other')
     ]
     
     name = models.CharField(max_length=100)

@@ -4,6 +4,12 @@
         {% include './sidebar_search.html' %}
     </div>
     <div class="gap-2 flex flex-col overflow-y-auto p-4" name="form_filter-tech-stack">
+    {% for technology in technologies %}
+        {% ifchanged %}<h4 class="text-primary-700 font-medium bold">{{ technology.get_category_display }}</h4>{% endifchanged %}
+        {% include './sidebar_item.html' with icon="{{ technology.icon.url }}" title="{{ technology.display_name }}" name="{{ technology.name }}" %}
+    {% endfor %}
+    </div>
+    <!--<div class="gap-2 flex flex-col overflow-y-auto p-4" name="form_filter-tech-stack">
         {% include './sidebar_item.html' with icon="public/_icons/Python.svg" title="PYTHON" name="python" %}
         {% include './sidebar_item.html' with icon="public/_icons/Django.svg" title="DJANGO" name="django" %}   
         {% include './sidebar_item.html' with icon="public/_icons/Django REST.svg" title="DJANGO REST FRAMEWORK" name="django_rest_framework" %}
@@ -21,5 +27,5 @@
         {% include './sidebar_item.html' with icon="public/_icons/Tailwind CSS.svg" title="TAILWIND CSS" name="tailwind_css" %}
         {% include './sidebar_item.html' with icon="public/_icons/PHP.svg" title="PHP" name="php" %}
         {% include './sidebar_item.html' with icon="public/_icons/WordPress.svg" title="WORDPRESS" name="wordpress" %}
-    </div>
+    </div>-->
 </div>

@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
 from .models import (
-    Project
+    Project,
+    Technology
 )
 
 def index(request):
@@ -9,9 +10,11 @@ def index(request):
 
 def projects(request):
     projects = Project.objects.all()
+    technologies = Technology.objects.all().order_by('category')
     
     context = {
-        'projects': projects
+        'projects': projects,
+        'technologies': technologies
     }
     
     return render(
