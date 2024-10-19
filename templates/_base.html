@@ -19,7 +19,17 @@
 
         <link rel="icon" type="image/svg" href="{% static 'assets/logo.svg' %}">
     </head>
-    <body class="w-screen h-screen overflow-y-hidden min-w-[320px]">
+    <body
+        x-data="{
+            darkMode: {
+                on: false,
+                toggle() {
+                    this.on = !this.on;
+                },
+            }
+        }"
+        x-bind:class="{ 'dark': darkMode.on }"
+        class="w-screen h-screen overflow-y-hidden min-w-[200px]">
         {% block body %}
         {% endblock %}
 

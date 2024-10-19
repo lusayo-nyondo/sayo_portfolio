@@ -10,6 +10,8 @@ from .widgets import (
 )
 
 class ContactMessageForm(forms.ModelForm):
+    template_name_p = 'public/pages/contact/p.html'
+    
     name = forms.CharField(
         max_length=100,
         widget=Input()

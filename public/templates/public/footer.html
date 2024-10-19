@@ -1,9 +1,6 @@
 {% load static %}
-<footer class="bg-white rounded-lg shadow sm:flex sm:items-center sm:justify-between p-2 sm:p-4 xl:p-6 dark:bg-gray-800 antialiased h-[40px] flex justify-center items-center">
+<footer class="bg-white shadow p-2 sm:p-4 xl:p-6 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-600 antialiased h-[40px] flex justify-center items-center">
     <div class="flex items-center w-full justify-center items-center space-x-1">
-        {% comment %}{% include './footer/social_media_link.html' with url="https://x.com/@lusayo_ny" static_icon_url="assets/icons/twitter.svg" name="twitter" display_name="Twitter" call_to_action="Follow me on X" %}
-        {% include './footer/social_media_link.html' with url="https://github.com/lusayo-nyondo" static_icon_url="assets/icons/github.svg" name="github" display_name="GitHub" call_to_action="Follow me on GitHub" %}{% endcomment %}
-
         {% for social_link in social_links %}
             {% include './footer/social_media_link.html' with url=social_link.url icon_url=social_link.icon.url name=social_link.name display_name=social_link.display_name call_to_action=social_link.call_to_action %}
         {% endfor %}
