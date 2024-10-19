@@ -11,11 +11,8 @@
     <div class="w-full flex-1 grid grid-cols-12 gap-2 overflow-y-auto items-center justify-center p-4">
         {% for project in projects %}
             {% include './project_item.html' with project=project %}
-        {% empty %}
-        <div class="h-full w-full items-end justify-center flex bg-center bg-no-repeat"
-            style="background-image: url('{% static "assets/illustrations/cat.png" %}')">
-            <p class="text-lg text-primary-700">Looks like there's no projects yet. 😿</p>
-        </div>
+        {% empty %}     
+            {% include 'public/404.html' with message="Looks like there's no projects yet." %}
         {% endfor %}
     </div>  
 </div>

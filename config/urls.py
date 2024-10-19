@@ -27,9 +27,13 @@ from .settings.base import (
 )
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('__reload__', include('django_browser_reload.urls')),
+    
+    path('admin/', admin.site.urls),
+    
+    path('portfolio/', include('portfolio.urls')),
+    path('services/', include('services.urls')),
+    path('blog/', include('blog.urls')),
+    
     path('', include('public.urls')),
-    path('portfolio', include('portfolio.urls')),
-    path('services', include('services.urls')),
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)

@@ -1,0 +1,9 @@
+{% load public_extras %}
+
+{% setvar "py-1 px-4 flex flex-row items-center gap-2 text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded text-sm text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" as active_class %}
+{% setvar "py-1 px-4 flex flex-row items-center gap-2 text-white bg-primary-700 hover:bg-primary-800 ring-4 outline-none ring-primary-300 font-medium rounded text-sm text-center dark:bg-primary-600 dark:hover:bg-primary-700 focus:ring-primary-800" as inactive_class %}
+<a
+    href="{% url 'blog_index' %}"
+    class="{% get_navbar_link_class request 'blog_index' inactive_class active_class %}">
+    <span>Blog</span>
+</a>

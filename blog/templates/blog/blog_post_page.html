@@ -1,0 +1,26 @@
+{% extends 'blog/_base.html' %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block content %}
+    <div class="h-full w-full md:w-[80%] max-w-[1200px] mx-auto flex flex-col overflow-y-auto">
+        <div class="w-full p-4 flex flex-row gap-2 items-center justify-start">
+            {% include './blog_post/top_menu.html' %}
+            <h2 class="text-3xl flex-1 text-center">{{ page.title }}</h2>
+        </div>
+        <div class="w-full p-4 flex flex-col gap-2 items-center justify-center">
+            <div class="bg-primary-700 rounded-xl flex flex-row justify-center px-8">
+                <p class="text-sm w-full text-white font-medium text-end">{{ page.date }}</p>
+            </div>
+            <div class="h-[300px] p-4 flex flex-row justify-center items-center border border-1 border-gray-200">
+                {% image page.hero_image max-2000x2000 class="rounded-xl p-4 object-contain h-[300px]" %}
+            </div>
+            <div class="w-full p-4 flex flex-row justify-center">
+                <p class="text-gray-500">{{ page.intro }}</p>
+            </div>
+            <div class="w-full p-4 flex flex-row justify-center">
+                {{ page.body|richtext }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

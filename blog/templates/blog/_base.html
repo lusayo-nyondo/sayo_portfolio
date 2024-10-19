@@ -1,0 +1,13 @@
+{% extends 'public/_base.html' %}
+
+{% block content %}
+    <div class="flex flex-col h-full w-full overflow-y-hidden">
+        <div class="w-full">
+            {% include 'blog/search.html' %}
+        </div>
+        <div class="w-full flex-1 overflow-y-hidden">
+            {% block app_content %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

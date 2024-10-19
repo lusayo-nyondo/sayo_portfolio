@@ -29,13 +29,29 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail',
+
+    'modelcluster',
+    'taggit',
+    
     'django_browser_reload',
     'compressor',
-    'django.forms',
     
     'public',
     'portfolio',
     'services',
+    
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +66,8 @@ MIDDLEWARE = [
     'django_browser_reload.middleware.BrowserReloadMiddleware',
     
     'django_htmx.middleware.HtmxMiddleware',
+    
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -149,3 +167,6 @@ AUTHENTICATION_BACKENDS = [
 
 MEDIA_ROOT = 'public_media'
 MEDIA_URL = '/media/'
+
+WAGTAIL_SITE_NAME = 'Sayo Portfolio'
+WAGTAILADMIN_BASE_URL = '/blog/cms/'

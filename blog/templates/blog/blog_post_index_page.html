@@ -1,0 +1,11 @@
+{% extends 'blog/_base.html' %}
+
+{% block app_content %}
+    <div class="w-full h-full flex flex-col gap-2 items-center start-center p-4 overflow-y-auto">
+        {% for post in posts %}
+            {% include './blog_post_index/blog_post.html' with post=post %}
+        {% empty %}
+            {% include 'public/404.html' with message="Looks like there's no blog posts yet." %}
+        {% endfor %}
+    </div>
+{% endblock %}
