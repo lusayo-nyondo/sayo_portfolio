@@ -6,3 +6,9 @@ def index(request):
         request,
         '/'        
     )
+    
+def query(request, query):
+    return views.serve(
+        request,
+        '/' + query
+    )
