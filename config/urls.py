@@ -32,7 +32,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('portfolio/', include('portfolio.urls')),
-    path('services/', include('services.urls')),
     path('blog/', include('blog.urls')),
     
     path('', include('public.urls')),
