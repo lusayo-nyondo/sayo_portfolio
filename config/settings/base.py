@@ -170,3 +170,4 @@ MEDIA_URL = '/media/'
 
 WAGTAIL_SITE_NAME = 'Sayo Portfolio'
 WAGTAILADMIN_BASE_URL = '/blog/cms/'
+WAGTAILEMBEDS_RESPONSIVE = True

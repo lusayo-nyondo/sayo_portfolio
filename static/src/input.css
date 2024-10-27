@@ -2,16 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+.wagtail-richtext p,
+.wagtail-richtext ul,
+.wagtail-richtext ol,
 .wagtail-richtext h2,
 .wagtail-richtext h3,
 .wagtail-richtext h4,
 .wagtail-richtext h5,
 .wagtail-richtext h6 {
-    @apply font-bold;
-    @apply text-primary-700;
-    @apply mb-2;
-    @apply text-start;
-    @apply w-full;
+    @apply w-full text-start mb-2;
+}
+
+.wagtail-richtext h2,
+.wagtail-richtext h3,
+.wagtail-richtext h4,
+.wagtail-richtext h5,
+.wagtail-richtext h6 {
+    @apply font-bold text-primary-700;
 }
 
 .wagtail-richtext h2 {
@@ -32,4 +39,21 @@
 
 .wagtail-richtext h6 {
     @apply text-sm;
+}
+
+.wagtail-richtext a {
+    @apply underline text-primary-700 hover:text-primary-500 cursor-pointer;
+    @apply transition ease-in-out duration-300;
+}
+
+.wagtail-richtext img {
+    @apply w-full md:w-[80%] h-full object-contain p-2 rounded;
+}
+
+.wagtail-richtext div {
+    @apply w-full md:w-[80%] flex flex-row justify-center;
+}
+
+.wagtail-richtext iframe {
+    @apply !w-full !aspect-video;
 }
