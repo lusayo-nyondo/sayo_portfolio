@@ -952,6 +952,10 @@ video {
   width: 0.75rem;
 }
 
+.w-\[90\%\] {
+  width: 90%;
+}
+
 .min-w-\[200px\] {
   min-width: 200px;
 }
@@ -1722,6 +1726,44 @@ video {
 
 .ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.wagtail-richtext h2,
+.wagtail-richtext h3,
+.wagtail-richtext h4,
+.wagtail-richtext h5,
+.wagtail-richtext h6 {
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(21 128 61 / var(--tw-text-opacity));
+  margin-bottom: 0.5rem;
+  text-align: start;
+  width: 100%;
+}
+
+.wagtail-richtext h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.wagtail-richtext h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.wagtail-richtext h4 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.wagtail-richtext h5 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.wagtail-richtext h6 {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .checked\:bg-secondary-700:checked {

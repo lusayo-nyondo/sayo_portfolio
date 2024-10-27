@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.wagtail-richtext h2,
+.wagtail-richtext h3,
+.wagtail-richtext h4,
+.wagtail-richtext h5,
+.wagtail-richtext h6 {
+    @apply font-bold;
+    @apply text-primary-700;
+    @apply mb-2;
+    @apply text-start;
+    @apply w-full;
+}
+
+.wagtail-richtext h2 {
+    @apply text-2xl;
+}
+
+.wagtail-richtext h3 {
+    @apply text-xl;
+}
+
+.wagtail-richtext h4 {
+    @apply text-lg;
+}
+
+.wagtail-richtext h5 {
+    @apply text-base;
+}
+
+.wagtail-richtext h6 {
+    @apply text-sm;
+}

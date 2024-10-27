@@ -13,7 +13,15 @@ def get_navbar_link_class(request, url, active_class, inactive_class):
     reversed_url = reverse(url)
     current_url = request.path
     
-    if reversed_url == current_url:
+    is_url_part_of_current_url = current_url.startswith(reversed_url)
+    
+    print(reversed_url)
+    if reversed_url == '/':
+        if reversed_url == current_url:
+            return active_class
+        else:
+            return inactive_class
+    elif is_url_part_of_current_url:
         return active_class
     else:
         return inactive_class

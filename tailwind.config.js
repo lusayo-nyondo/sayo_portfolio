@@ -37,6 +37,7 @@ module.exports = {
     './node_modules/flowbite/**/*.js',
     '!./venv',
     './**/*.py',
+    './static/src/input.css',
   ],
   darkMode: 'class',
   theme: {
