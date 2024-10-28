@@ -19,17 +19,16 @@
         {% include './active_filters.html' %}
     </div>
     <div
-        class="w-full flex flex-row justify-center py-2 md:hidden"
+        class="w-full flex flex-row justify-end py-2 md:hidden gap-2"
         x-bind:class="{
             'hidden': !filters_open,
         }">
         <button
-            x-bind:disabled="filter_technologies.length === 0"
             type="button"
             class="bg-secondary-500 disabled:bg-secondary-300 disabled:ring-0 ring-3 ring-secondary-300 disabled:text-gray-500 rounded hover:bg-secondary-300 transition ease-in-out p-1"
             x-on:click="filters_open = !filters_open">
             <span
-                class="font-medium">Apply Filters</span>
+                class="font-medium">Done</span>
         </button>
     </div>
 </div>

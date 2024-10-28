@@ -6,7 +6,7 @@ from .models import (
 )
 
 class ContactMessageAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'subject', 'created_on')
+    list_display = ('your_name', 'email', 'subject', 'created_on')
 
 
 admin.site.register(SocialLink)    
