@@ -57,3 +57,7 @@
 .wagtail-richtext iframe {
     @apply !w-full !aspect-video;
 }
+
+.wagtail-richtext li {
+    @apply font-bold text-md text-primary-700 mb-2;
+}
