@@ -1796,7 +1796,7 @@ video {
   width: 100% !important;
 }
 
-.wagtail-richtext li {
+.wagtail-richtext > ul > li {
   margin-bottom: 0.5rem;
   font-weight: 700;
   --tw-text-opacity: 1;
