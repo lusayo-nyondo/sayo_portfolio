@@ -1796,6 +1796,13 @@ video {
   width: 100% !important;
 }
 
+.wagtail-richtext li {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(21 128 61 / var(--tw-text-opacity));
+}
+
 .checked\:bg-secondary-700:checked {
   --tw-bg-opacity: 1;
   background-color: rgb(180 83 9 / var(--tw-bg-opacity));
