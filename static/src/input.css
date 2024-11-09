@@ -61,3 +61,7 @@
 .wagtail-richtext > ul > li {
     @apply font-bold text-primary-700 mb-2;
 }
+
+.wagtail-richtext > ul > li > ul {
+    @apply font-normal text-black mb-1;
+}
