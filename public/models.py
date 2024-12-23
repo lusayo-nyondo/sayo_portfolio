@@ -33,4 +33,4 @@ class ContactMessage(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return f"{self.name} - {self.subject}"
+        return f"{self.your_name} - {self.subject}"
