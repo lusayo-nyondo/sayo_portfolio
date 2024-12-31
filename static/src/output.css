@@ -1783,7 +1783,7 @@ video {
   }
 }
 
-.wagtail-richtext div {
+.wagtail-richtext div:not(.block-rich_text) {
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -1791,7 +1791,7 @@ video {
 }
 
 @media (min-width: 768px) {
-  .wagtail-richtext div {
+  .wagtail-richtext div:not(.block-rich_text) {
     width: 80%;
   }
 }

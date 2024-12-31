@@ -10,7 +10,8 @@
   "version": "1.0.0",
   "description": "My portfolio project.",
   "scripts": {
-    "dev": "tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch"
+    "dev": "tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch",
+    "build": "tailwindcss -i ./static/src/input.css -o ./static/src/output.css"
   },
   "author": "Lusayo Nyondo",
   "license": "ISC"

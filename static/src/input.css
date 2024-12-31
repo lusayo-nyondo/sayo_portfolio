@@ -50,7 +50,7 @@
     @apply w-full md:w-[80%] h-full object-contain p-2 rounded;
 }
 
-.wagtail-richtext div {
+.wagtail-richtext div:not(.block-rich_text) {
     @apply w-full md:w-[80%] flex flex-row justify-center;
 }
 
