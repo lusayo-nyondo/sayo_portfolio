@@ -45,8 +45,7 @@ INSTALLED_APPS = [
     'taggit',
     
     'django_browser_reload',
-    'compressor',
-    
+
     'public',
     'portfolio',
     'services',
@@ -147,10 +146,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-COMPRESS_ROOT = BASE_DIR / 'static'
-COMPRESS_ENABLED = True
 STATICFILES_FINDERS = (
-    'compressor.finders.CompressorFinder',
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
