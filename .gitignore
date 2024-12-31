@@ -5,5 +5,4 @@ __pycache__
 venv
 static/CACHE
 public_static
-migrations/
 db.sqlite3
